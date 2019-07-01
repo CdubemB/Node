@@ -7,23 +7,23 @@ eventEmmiter.on("source", function (num1, num2) {
     console.log(num1 + num2);
 }); //first example of use of an emmiter
 
-eventEmmiter.emit("source", 7, 16); /emmiting something
+eventEmmiter.emit("source", 7, 16); //emmiting something
 
 class Person extends EventEmmiter {
     constructor(name) {
         super();
-        this.name = name;
+        this._name = name;
     }
 
     get name() {
-        return this.name;
+        return this._name;
     }
 }; //creating an object
 
 let jimmy = new Person("jimmy");//defining jimmy st the person object
 
 jimmy.on("name", function () {
-    console.log("my name is" + jimmy.name);
+    console.log("my name is" + jimmy._name);
 }); //using jimmy as an event emmiter
 
 pedro.emit("name"); //emmiting "name"
