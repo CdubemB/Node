@@ -18,12 +18,17 @@ class Person extends EventEmmiter {
     get name() {
         return this._name;
     }
-}; //creating an object
+}; //creating an object obstructor from the person database
 
 let jimmy = new Person("jimmy");//defining jimmy st the person object
+let josephene = new Person("Josephene");
 
-jimmy.on("name", function () {
-    console.log("my name is" + jimmy._name);
+josephene.on("name", ()=>{
+    console.log("my name is" + josephene._name);
+    
+}); //usisng josephene as an event emmitter
+jimmy.on("name", ()=>{
+    console.log("my name is  " + jimmy._name);
 }); //using jimmy as an event emmiter
 
-pedro.emit("name"); //emmiting "name"
+jimmy.emit("name"); //emmiting "name"
